@@ -71,7 +71,7 @@ def get_summary(month: str):
             else:
                 summary[cat] = exp.amount
         
-        if not summary:
-            return {"message": "No expenses found for this month"}
+    if not summary:
+        return {"message": "No expenses found for this month"}
 
     return summary
