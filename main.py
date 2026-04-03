@@ -63,13 +63,13 @@ def get_summary(month: str):
     summary = {}
 
     for exp in expenses:
-        if exp["date"].startswith(month):
-            cat = exp["category"]
+        if exp.date.strftime("%Y-%m").startswith(month):
+            cat = exp.category.value
 
             if cat in summary:
-                summary[cat] += exp["amount"]
+                summary[cat] += exp.amount
             else:
-                summary[cat] = exp["amount"]
+                summary[cat] = exp.amount
         
         if not summary:
             return {"message": "No expenses found for this month"}

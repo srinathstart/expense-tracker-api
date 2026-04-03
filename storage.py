@@ -1,9 +1,11 @@
 import json
+from models import Expense
 
 def load_expenses():
     try:
         with open("expenses.json", "r") as file:
-            return json.load(file)
+            data = json.load(file)
+            return [Expense(**item) for item in data]
     except:
         return []
     
