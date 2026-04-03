@@ -31,7 +31,7 @@ def get_expenses(category: Category = None):
         return [exp for exp in expenses if exp.category == category]
     return expenses
 
-@app.get("/expenses/{expenses_id}")
+@app.get("/expenses/{expense_id}")
 def get_expense(expense_id: str):
     for exp in expenses:
         if exp.id == expense_id:
